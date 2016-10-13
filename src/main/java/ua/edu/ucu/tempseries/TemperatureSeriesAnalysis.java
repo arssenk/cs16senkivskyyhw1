@@ -15,11 +15,10 @@ class TemperatureSeriesAnalysis {
         this.first = temperatureSeries;
         ind = this.first.length;
         for (double i: this.first) {
-            if (i<-273) {
+            if (i < -273) {
                 throw new InputMismatchException();
             }
         }
-
     }
 
     double average() {
@@ -124,7 +123,7 @@ class TemperatureSeriesAnalysis {
         }
         if (i != newArray.length) {
             double[] finalArray = new double[i];
-            for (int k = 0; k< i; k++) {
+            for (int k = 0; k <  i; k++) {
                 finalArray[k] = newArray[k];
             }
             return finalArray;
@@ -135,25 +134,25 @@ class TemperatureSeriesAnalysis {
 
     double[] findTempsGreaterThen(double tempValue) {
         if (this.first.length == 0) {
-            throw new IllegalArgumentException ("Input is none!");
+            throw new IllegalArgumentException ("No input");
         }
-        double[] newArray = new double[this.first.length];
+        double[] myList = new double[this.first.length];
         int p = 0;
         for (double number : this.first) {
             if (number >= tempValue) {
-                newArray[p] = number;
+                myList[p] = number;
                 p++;
             }
         }
-        if (p != newArray.length) {
+        if (p != myList.length) {
             double[] finalArray = new double[p];
             for (int index = 0; index< p; index++) {
-                finalArray[index] = newArray[index];
+                finalArray[index] = myList[index];
             }
             return finalArray;
 
         }
-        return newArray;
+        return myList;
     }
 
     TempSummaryStatistics summaryStatistics() {
@@ -163,11 +162,11 @@ class TemperatureSeriesAnalysis {
     public int addTemps(double... temps) {
         int p = 0;
         if (first.length - ind<temps.length){
-            double[] newArray = new double[first.length + temps.length- Math.abs(ind-first.length)];
+            double[] newArray = new double[first.length + temps.length - Math.abs(ind - first.length)];
             for (int i = 0; i< ind; i++){
                 newArray[i] = first[i];
             }
-            for (int i =ind; i<ind+temps.length; i++){
+            for (int i = ind; i < ind+temps.length; i++){
                 newArray[i] = temps[p];
                 p++;
             }
