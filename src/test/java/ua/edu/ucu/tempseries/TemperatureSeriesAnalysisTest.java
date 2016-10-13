@@ -283,4 +283,12 @@ public class TemperatureSeriesAnalysisTest {
         // expect exception here
         seriesAnalysis.summaryStatistics();
     }
+    @Test
+    public void testAddToValue() {
+        double[] temperatureSeries = {3.0, -5.0, 1.0, 5.0};
+        TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+        int expResult = 8;
+        int actualResult = seriesAnalysis.addTemps(temperatureSeries);
+        assertThat(expResult, equalTo(actualResult));
+    }
 }

@@ -14,8 +14,8 @@ class TemperatureSeriesAnalysis {
     TemperatureSeriesAnalysis(double[] temperatureSeries) {
         this.first = temperatureSeries;
         ind = this.first.length;
-        for(double i: this.first){
-            if(i<-273){
+        for (double i: this.first) {
+            if (i<-273) {
                 throw new InputMismatchException();
             }
         }
@@ -122,9 +122,9 @@ class TemperatureSeriesAnalysis {
                 i++;
             }
         }
-        if (i != newArray.length){
+        if (i != newArray.length) {
             double[] finalArray = new double[i];
-            for (int k = 0; k< i; k++){
+            for (int k = 0; k< i; k++) {
                 finalArray[k] = newArray[k];
             }
             return finalArray;
@@ -145,9 +145,9 @@ class TemperatureSeriesAnalysis {
                 p++;
             }
         }
-        if (p != newArray.length){
+        if (p != newArray.length) {
             double[] finalArray = new double[p];
-            for (int index = 0; index< p; index++){
+            for (int index = 0; index< p; index++) {
                 finalArray[index] = newArray[index];
             }
             return finalArray;
