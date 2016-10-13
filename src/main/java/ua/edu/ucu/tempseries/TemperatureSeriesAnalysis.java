@@ -135,10 +135,10 @@ class TemperatureSeriesAnalysis {
 
     double[] findTempsGreaterThen(double tempValue) {
         if (this.first.length == 0) {
-            throw new IllegalArgumentException("Input is none!");
+            throw new IllegalArgumentException ("Input is none!");
         }
         double[] newArray = new double[this.first.length];
-        int p= 0;
+        int p = 0;
         for (double number : this.first) {
             if (number >= tempValue) {
                 newArray[p] = number;
@@ -157,17 +157,17 @@ class TemperatureSeriesAnalysis {
     }
 
     TempSummaryStatistics summaryStatistics() {
-        return new TempSummaryStatistics(average(), deviation(), min(), max());
+        return new TempSummaryStatistics (average(), deviation(), min(), max());
     }
 
     public int addTemps(double... temps) {
         int p = 0;
-        if(first.length - ind<temps.length){
+        if (first.length - ind<temps.length){
             double[] newArray = new double[first.length + temps.length- Math.abs(ind-first.length)];
-            for(int i = 0; i< ind; i++){
+            for (int i = 0; i< ind; i++){
                 newArray[i] = first[i];
             }
-            for(int i =ind; i<ind+temps.length; i++){
+            for (int i =ind; i<ind+temps.length; i++){
                 newArray[i] = temps[p];
                 p++;
             }
